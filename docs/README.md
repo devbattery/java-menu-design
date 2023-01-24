@@ -17,5 +17,8 @@
 - `ReferralService` -> `Coach` (카테고리 추천)
 - `ReferralService` -> `Category` (메뉴 선택 요구) -> (음식 정해서 `Coach` 한테 주기)
 
-- 커밋테스트
-- 커밋테스트 2번째
+- 코치이름 2글자 ~ 4글자
+- 코치수 2명 ~ 5명
+- 코치 못먹는 음식 0 ~ 2개
+
+- 예외는 IllegalArgumentException [ERROR] 에러메시지, 재입력가능하도록,
