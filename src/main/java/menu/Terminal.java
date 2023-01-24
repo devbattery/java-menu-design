@@ -17,6 +17,7 @@ public class Terminal {
         System.out.println("코치의 이름을 입력해 주세요. (, 로 구분)");
         String input = br.readLine();
         String[] split = input.split(",");
+
         validateCoachCount(split);
 
         return List.of(split);
@@ -28,6 +29,18 @@ public class Terminal {
         String[] split = input.split(",");
 
         return List.of(split);
+    }
+
+    public void printDayAndCategories(ReferralService referralService) {
+        System.out.println("메뉴 추천 결과입니다.");
+        System.out.println("[구분 | 월요일 | 화요일 | 수요일 | 목요일 | 금요일 ]");
+        List<Category> categories = referralService.getDayOfCategory();
+
+        System.out.print("[ 카테고리 |");
+        categories.stream()
+                .map(c -> c.getCategoryName())
+                .forEach(cn -> System.out.print(" " + cn + " |"));
+        System.out.println("\b]");
     }
 
     private static void validateCoachCount(String[] split) {
