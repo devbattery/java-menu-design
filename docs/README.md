@@ -22,3 +22,5 @@
 - 코치 못먹는 음식 0 ~ 2개
 
 - 예외는 IllegalArgumentException [ERROR] 에러메시지, 재입력가능하도록,
+
+- 포크 테스트 fork
