@@ -33,7 +33,7 @@ public class Terminal {
 
     public void printDayAndCategories(ReferralService referralService) {
         System.out.println("메뉴 추천 결과입니다.");
-        System.out.println("[구분 | 월요일 | 화요일 | 수요일 | 목요일 | 금요일 ]");
+        System.out.println("[ 구분 | 월요일 | 화요일 | 수요일 | 목요일 | 금요일 ]");
         List<Category> categories = referralService.getDayOfCategory();
 
         System.out.print("[ 카테고리 |");
@@ -41,6 +41,15 @@ public class Terminal {
                 .map(c -> c.getCategoryName())
                 .forEach(cn -> System.out.print(" " + cn + " |"));
         System.out.println("\b]");
+    }
+
+    public void printEachFood(Coach coach, List<String> food) {
+        System.out.print("[ " + coach.getName() + " |");
+
+        food.stream()
+                .forEach(f -> System.out.print(" " + f + " |"));
+
+        System.out.print("\b]");
     }
 
     private static void validateCoachCount(String[] split) {

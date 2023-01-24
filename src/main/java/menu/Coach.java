@@ -17,6 +17,10 @@ public class Coach {
         validateDislikes(dislikes);
     }
 
+    public String getName() {
+        return name;
+    }
+
     public List<String> callReferralService() {
         return service.suggestMenu(dislikes);
     }

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -58,6 +59,14 @@ class TerminalTest {
         Terminal terminal = new Terminal();
         ReferralService service = new ReferralService();
         terminal.printDayAndCategories(service);
+    }
 
+    @Test
+    void 음식_출력() {
+        Terminal terminal = new Terminal();
+        ReferralService service = new ReferralService();
+        Coach coach = new Coach("hyun", service, List.of(""));
+        terminal.printDayAndCategories(service);
+        terminal.printEachFood(coach, coach.callReferralService());
     }
 }
