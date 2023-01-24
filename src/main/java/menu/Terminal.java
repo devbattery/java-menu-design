@@ -52,6 +52,10 @@ public class Terminal {
         System.out.print("\b]");
     }
 
+    public void finishService() {
+        System.out.println("추천을 완료했습니다.");
+    }
+
     private static void validateCoachCount(String[] split) {
         if (split.length < 2 || split.length > 5) {
             throw new IllegalArgumentException("[ERROR] 코치는 최소 2명, 최대 5명 까지 허용됩니다.");
