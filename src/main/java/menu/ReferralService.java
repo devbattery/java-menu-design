@@ -16,18 +16,15 @@ public class ReferralService {
 
 
     public List<String> suggestMenu() {
-        // Randoms.shuffle() -> List<String>
-
         List<String> chosenFood = new ArrayList<>();
 
         for (int i = 0; i < dayOfCategory.size(); i++) {
             List<String> food = dayOfCategory.get(i).getFood();
-            chosenFood.add(Randoms.shuffle(food).get(0));
+            String foodName = recommendUniqueFood(chosenFood, food);
+            chosenFood.add(foodName);
         }
 
         return chosenFood;
-
-        // List<String> food = category.getFood();
     }
 
     private void chooseCategory() {
@@ -52,6 +49,14 @@ public class ReferralService {
             }
         }
         return idx;
+    }
+
+    private String recommendUniqueFood(List<String> chosenFood, List<String> food) {
+        String foodName = Randoms.shuffle(food).get(0);
+        while (chosenFood.contains(foodName)) {
+            foodName = Randoms.shuffle(food).get(0);
+        }
+        return foodName;
     }
 
     public List<Category> getDayOfCategory() {
