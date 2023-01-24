@@ -18,3 +18,4 @@
 - `ReferralService` -> `Category` (메뉴 선택 요구) -> (음식 정해서 `Coach` 한테 주기)
 
 - 커밋테스트
+- 커밋테스트 2번째
