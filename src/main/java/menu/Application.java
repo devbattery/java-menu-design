@@ -23,6 +23,7 @@ public class Application {
 
             for (Coach coach : coaches) {
                 terminal.printEachFood(coach, coach.callReferralService());
+                System.out.println();
             }
             terminal.finishService();
 
