@@ -53,4 +53,11 @@ class TerminalTest {
         assertThat(sullyDislikes).containsExactly("뇨끼", "월남쌈");
     }
 
+    @Test
+    void 요일_카테고리_출력() {
+        Terminal terminal = new Terminal();
+        ReferralService service = new ReferralService();
+        terminal.printDayAndCategories(service);
+
+    }
 }
