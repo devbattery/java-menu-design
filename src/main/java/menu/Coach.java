@@ -15,6 +15,6 @@ public class Coach {
     }
 
     public List<String> callReferralService() {
-        return service.suggestMenu();
+        return service.suggestMenu(dislikes);
     }
 }
