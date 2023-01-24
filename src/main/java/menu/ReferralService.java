@@ -2,6 +2,7 @@ package menu;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+import java.lang.invoke.CallSite;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +14,19 @@ public class ReferralService {
         chooseCategory();
     }
 
-    public String suggestMenu() {
-        return "Coach 가 메뉴 추천을 요구하였습니다.";
+
+    public List<String> suggestMenu() {
+        // Randoms.shuffle() -> List<String>
+
+        List<String> chosenFood = new ArrayList<>();
+
+        for (int i = 0; i < dayOfCategory.size(); i++) {
+            List<String> food = dayOfCategory.get(i).getFood();
+            chosenFood.add(Randoms.shuffle(food).get(0));
+        }
+
+        return chosenFood;
+
         // List<String> food = category.getFood();
     }
 

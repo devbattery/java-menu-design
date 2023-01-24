@@ -14,7 +14,7 @@ public class Coach {
         this.service = service;
     }
 
-    public String callReferralService() {
+    public List<String> callReferralService() {
         return service.suggestMenu();
     }
 }
